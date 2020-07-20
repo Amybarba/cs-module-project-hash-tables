@@ -3,13 +3,25 @@ find all a, b, c, d in q such that
 f(a) + f(b) = f(c) - f(d)
 """
 
-#q = set(range(1, 10))
-#q = set(range(1, 200))
+# q = set(range(1, 10))
+# q = set(range(1, 200))
 q = (1, 3, 4, 7, 12)
 
 
 def f(x):
     return x * 4 + 6
 
-# Your code here
 
+# Your code here
+sum = {}
+subtract = {}
+
+for i in range(0, len(q)):
+    for s in range(0, len(q)):
+        sum[f'f({q[i]} + f({q[s]}'] = f(q[i]) + f(q[s])
+        subtract[f'f({q[i]} - f({q[s]}'] = f(q[i]) - f(q[s])
+
+for add in sum:
+    for minus in subtract:
+        if subtract[minus] == sum[add]:
+            print(f'{sum} = {minus} = {sum[add]}')
